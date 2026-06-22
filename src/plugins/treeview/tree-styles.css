@@ -1,7 +1,5 @@
 .tree-view-output {
   display: block;
-  background: #222;
-  color: #fff;
   padding: 5px;
   font-size: 12px;
   white-space: pre-wrap;
@@ -9,6 +7,16 @@
   position: relative;
   overflow: auto;
   line-height: 14px;
+}
+
+[data-rte-theme='light'] .tree-view-output {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+[data-rte-theme='dark'] .tree-view-output {
+  background: #222;
+  color: #fff;
 }
 
 .debug-time-travel-panel {
@@ -28,8 +36,15 @@
   border: 0;
   background: none;
   flex: 1;
-  color: #fff;
   font-size: 12px;
+}
+
+[data-rte-theme='light'] .debug-time-travel-panel-button {
+  color: #111827;
+}
+
+[data-rte-theme='dark'] .debug-time-travel-panel-button {
+  color: #fff;
 }
 
 .debug-time-travel-panel-button:hover {
@@ -44,6 +59,13 @@
   right: 15px;
   position: absolute;
   background: none;
+}
+
+[data-rte-theme='light'] .debug-time-travel-button {
+  color: #111827;
+}
+
+[data-rte-theme='dark'] .debug-time-travel-button {
   color: #fff;
 }
 

@@ -15,6 +15,8 @@ import {
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { RichTextToolbarButton } from '#/plugins/toolbar/RichTextToolbarButton'
+import { ToolbarIcon } from '#/plugins/toolbar/ToolbarIcon'
+import { toolbarIcons } from '#/plugins/toolbar/toolbarIcons'
 import React from 'react'
 import { useEditorStateListener } from '#/plugins/toolbar/useEditorStateListener'
 
@@ -32,7 +34,7 @@ export function RichTextToolBarPlugin() {
           editor.dispatchCommand(UNDO_COMMAND, undefined)
         }}
       >
-        <i className="fa-solid fa-rotate-left"></i>
+        <ToolbarIcon svg={toolbarIcons.undo} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         disabled={!canRedo}
@@ -41,7 +43,7 @@ export function RichTextToolBarPlugin() {
           editor.dispatchCommand(REDO_COMMAND, undefined)
         }}
       >
-        <i className="fa-solid fa-rotate-right"></i>
+        <ToolbarIcon svg={toolbarIcons.redo} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={isBold}
@@ -49,22 +51,22 @@ export function RichTextToolBarPlugin() {
           editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
         }}
       >
-        <i className="fa-solid fa-bold"></i>
+        <ToolbarIcon svg={toolbarIcons.bold} />
       </RichTextToolbarButton>
       <RichTextToolbarButton active={isItalic} onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')}>
-        <i className="fa-solid fa-italic"></i>
+        <ToolbarIcon svg={toolbarIcons.italic} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={isUnderline}
         onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')}
       >
-        <i className="fa-solid fa-underline"></i>
+        <ToolbarIcon svg={toolbarIcons.underline} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={isStrikethrough}
         onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'strikethrough')}
       >
-        <i className="fa-solid fa-strikethrough"></i>
+        <ToolbarIcon svg={toolbarIcons.strikethrough} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={listType === 'number'}
@@ -76,7 +78,7 @@ export function RichTextToolBarPlugin() {
           }
         }}
       >
-        <i className="fa-solid fa-list-ol"></i>
+        <ToolbarIcon svg={toolbarIcons.orderedList} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={listType === 'bullet'}
@@ -88,7 +90,7 @@ export function RichTextToolBarPlugin() {
           }
         }}
       >
-        <i className="fa-solid fa-list"></i>
+        <ToolbarIcon svg={toolbarIcons.bulletList} />
       </RichTextToolbarButton>
 
       <RichTextToolbarButton
@@ -101,7 +103,7 @@ export function RichTextToolBarPlugin() {
           }
         }}
       >
-        <i className="fa-solid fa-square-check"></i>
+        <ToolbarIcon svg={toolbarIcons.checkList} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={false}
@@ -110,42 +112,39 @@ export function RichTextToolBarPlugin() {
           editor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined)
         }}
       >
-        <i className="fa-solid fa-paragraph"></i>
+        <ToolbarIcon svg={toolbarIcons.paragraph} />
       </RichTextToolbarButton>
 
-      {/*<RichTextToolbarButton active={isHeading}>*/}
-      {/*  <i className="fa-solid fa-heading"></i>*/}
-      {/*</RichTextToolbarButton>*/}
       <RichTextToolbarButton
         active={textAlignment === 'right'}
         onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right')}
       >
-        <i className="fa-solid fa-align-right"></i>
+        <ToolbarIcon svg={toolbarIcons.alignRight} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={textAlignment === 'center'}
         onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center')}
       >
-        <i className="fa-solid fa-align-center"></i>
+        <ToolbarIcon svg={toolbarIcons.alignCenter} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={textAlignment === 'justify'}
         onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify')}
       >
-        <i className="fa-solid fa-align-justify"></i>
+        <ToolbarIcon svg={toolbarIcons.alignJustify} />
       </RichTextToolbarButton>
       <RichTextToolbarButton
         active={textAlignment === 'left' || textAlignment === 'start' || textAlignment === ''}
         onClick={() => editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left')}
       >
-        <i className="fa-solid fa-align-left"></i>
+        <ToolbarIcon svg={toolbarIcons.alignLeft} />
       </RichTextToolbarButton>
 
       <RichTextToolbarButton
         active={isHighlighted}
         onClick={() => editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'highlight')}
       >
-        <i className="fa-solid fa-marker"></i>
+        <ToolbarIcon svg={toolbarIcons.highlight} />
       </RichTextToolbarButton>
     </div>
   )

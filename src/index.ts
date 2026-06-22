@@ -4,4 +4,4 @@ import { injectStyles } from './injectStyles'
 
 injectStyles(`${editorStyles}\n${treeStyles}`, '@insaneduck/rich-text-editor')
 
-export { RichTextEditor } from './RichTextEditor'
+export { RichTextEditor, type RichTextEditorTheme } from './RichTextEditor'

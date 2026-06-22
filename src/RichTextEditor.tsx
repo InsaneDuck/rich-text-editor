@@ -18,14 +18,19 @@ import { RichTextToolbarProvider } from '#/plugins/toolbar/RichTextToolbarContex
 import React from 'react'
 import { tailwindTheme } from '#/theme/TailwindTheme'
 
+export type RichTextEditorTheme = 'dark' | 'light'
+
 type RichTextProps = {
   label?: string
+  theme?: RichTextEditorTheme
 }
 
 export const placeholderText = 'Enter your text here...'
 
 const Placeholder = () => (
-  <div className={'pointer-events-none flex absolute top-2 left-2 text-gray-300 '}>{placeholderText}</div>
+  <div className="pointer-events-none absolute top-2 left-2 flex text-gray-400 dark:text-neutral-500">
+    {placeholderText}
+  </div>
 )
 
 const editorConfig: ComponentProps<typeof LexicalComposer>['initialConfig'] = {
@@ -36,7 +41,7 @@ const editorConfig: ComponentProps<typeof LexicalComposer>['initialConfig'] = {
   html: {},
 }
 
-export function RichTextEditor({ label }: RichTextProps) {
+export function RichTextEditor({ label, theme = 'light' }: RichTextProps) {
   const onChangeHandler = useCallback((_: EditorState, editor: LexicalEditor) => {
     editor.read(() => {
       const htmlString = $generateHtmlFromNodes(editor, null)
@@ -45,7 +50,7 @@ export function RichTextEditor({ label }: RichTextProps) {
   }, [])
 
   return (
-    <div>
+    <div data-rte-theme={theme}>
       <Column>
         <Label>{label}</Label>
         <LexicalComposer initialConfig={editorConfig}>
@@ -56,15 +61,11 @@ export function RichTextEditor({ label }: RichTextProps) {
             <div className="relative flex flex-col gap-2">
               <RichTextPlugin
                 contentEditable={
-                  <div
-                    className={
-                      'p-2 border border-gray-300 dark:border-neutral-800 max-w-full rounded-sm overflow-hidden resize-none'
-                    }
-                  >
+                  <div className="max-w-full resize-none overflow-hidden rounded-sm border border-gray-300 bg-white p-2 dark:border-neutral-800 dark:bg-neutral-900">
                     <ContentEditable
                       placeholder={Placeholder}
                       aria-placeholder={placeholderText}
-                      className={'text-black dark:text-white outline-none font-mono min-h-30 max-w-full'}
+                      className="min-h-30 max-w-full font-mono text-black outline-none dark:text-white"
                       autoFocus={true}
                     />
                   </div>
