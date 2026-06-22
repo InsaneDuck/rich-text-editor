@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc",
-    "prepare": "pnpm build",
+    "prepare": "vite build",
     "check": "prettier --check ."
   },
   "devDependencies": {
