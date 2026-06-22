@@ -1,19 +1,17 @@
 {
   "name": "@insaneduck/rich-text-editor",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "exports": {
-    "types": "./index.d.ts",
-    "default": "./dist/index.js"
-  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "index.d.ts"
+    "dist"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc",
+    "prepare": "pnpm build",
     "check": "prettier --check ."
   },
   "devDependencies": {
