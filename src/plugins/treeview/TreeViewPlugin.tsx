@@ -2,7 +2,6 @@ import type { JSX } from 'react'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { TreeView } from '@lexical/react/LexicalTreeView'
-import './tree-styles.css'
 import React from 'react'
 
 export function TreeViewPlugin(): JSX.Element {

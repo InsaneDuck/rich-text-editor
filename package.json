@@ -1,21 +1,39 @@
 {
   "name": "@insaneduck/rich-text-editor",
-  "private": true,
   "version": "0.0.1",
+  "description": "A Lexical-based rich text editor component for React",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InsaneDuck/rich-text-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/InsaneDuck/rich-text-editor/issues"
+  },
+  "homepage": "https://github.com/InsaneDuck/rich-text-editor#readme",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "sideEffects": true,
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc",
-    "prepare": "vite build",
+    "build": "vite build",
+    "prepare": "pnpm run build",
     "check": "prettier --check ."
   },
   "devDependencies": {
     "@tailwindcss/vite": "*",
+    "@types/node": "^26.0.0",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "prettier": "^3.8.4",
@@ -23,18 +41,21 @@
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.3.1",
     "typescript": "~6.0.2",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "vite-plugin-dts": "^5.0.2"
   },
   "peerDependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@lexical/extension": "*",
     "@lexical/html": "*",
     "@lexical/list": "*",
     "@lexical/react": "*",
     "@lexical/utils": "*",
     "lexical": "^0.45.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

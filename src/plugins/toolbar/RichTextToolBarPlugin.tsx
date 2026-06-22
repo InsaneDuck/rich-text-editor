@@ -14,9 +14,9 @@ import {
 } from '@lexical/list'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { RichTextToolbarButton } from '#/plugins/toolbar/RichTextToolbarButton.tsx'
+import { RichTextToolbarButton } from '#/plugins/toolbar/RichTextToolbarButton'
 import React from 'react'
-import { useEditorStateListener } from '#/plugins/toolbar/useEditorStateListener.ts'
+import { useEditorStateListener } from '#/plugins/toolbar/useEditorStateListener'
 
 export function RichTextToolBarPlugin() {
   const [editor] = useLexicalComposerContext()

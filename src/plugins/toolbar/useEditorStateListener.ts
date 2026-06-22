@@ -13,7 +13,7 @@ import {
 } from 'lexical'
 import { $isListNode, ListNode } from '@lexical/list'
 import { $getNearestNodeOfType } from '@lexical/utils'
-import { useRichTextToolbarContext } from '#/plugins/toolbar/RichTextToolbarContext.tsx'
+import { useRichTextToolbarContext } from '#/plugins/toolbar/RichTextToolbarContext'
 
 export function useEditorStateListener() {
   const [editor] = useLexicalComposerContext()
