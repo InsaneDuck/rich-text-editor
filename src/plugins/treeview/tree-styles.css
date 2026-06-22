@@ -1,0 +1,57 @@
+.tree-view-output {
+  display: block;
+  background: #222;
+  color: #fff;
+  padding: 5px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  max-height: 250px;
+  position: relative;
+  overflow: auto;
+  line-height: 14px;
+}
+
+.debug-time-travel-panel {
+  overflow: hidden;
+  padding: 0 0 10px 0;
+  margin: auto;
+  display: flex;
+}
+
+.debug-time-travel-panel-slider {
+  padding: 0;
+  flex: 8;
+}
+
+.debug-time-travel-panel-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  flex: 1;
+  color: #fff;
+  font-size: 12px;
+}
+
+.debug-time-travel-panel-button:hover {
+  text-decoration: underline;
+}
+
+.debug-time-travel-button {
+  border: 0;
+  padding: 0;
+  font-size: 12px;
+  top: 10px;
+  right: 15px;
+  position: absolute;
+  background: none;
+  color: #fff;
+}
+
+.debug-time-travel-button:hover {
+  text-decoration: underline;
+}
+
+.tree-view-output pre {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+}
